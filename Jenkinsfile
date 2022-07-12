@@ -10,10 +10,10 @@ node {
     stage('Update GIT') {
             script {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'Link2sign', usernameVariable: 'pranaykmgithub')]) {
                         //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
-                        sh "git config user.email pranay.munjampally@va.gov"
-                        sh "git config user.name Pranaykmunjam"
+                        sh "git config user.email m.pranay31@gmail.com"
+                        sh "git config user.name pranaykmgithub"
                         //sh "git switch master"
                         sh "cat deployment.yaml"
                         sh "sed -i 's+pranaykmdocker/test.*+pranaykmdocker/test:${DOCKERTAG}+g' deployment.yaml"
